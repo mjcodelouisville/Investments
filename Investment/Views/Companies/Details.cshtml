@@ -1,0 +1,67 @@
+﻿@model Investment.Models.Company
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Company</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ticker)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ticker)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Asset)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Asset)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Debt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Debt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Liquidity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Liquidity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Assessment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Assessment)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CompanyId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

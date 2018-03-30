@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Investment.Models.Company>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Add new company", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ticker)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Asset)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Debt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Liquidity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Assessment)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ticker)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Asset)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Debt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Liquidity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Assessment)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CompanyId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CompanyId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CompanyId })
+        </td>
+    </tr>
+}
+
+</table>
